@@ -13,6 +13,7 @@ interface Props {
 const GameCard = ({ game }: Props) => {
   return (
     <Card>
+       <Link to={"/games/" + game.slug}>
       <Image src={getCroppedImageUrl(game.background_image)} />
       <CardBody>
         <HStack justifyContent={"space-between"} marginBottom={3}>
@@ -26,6 +27,7 @@ const GameCard = ({ game }: Props) => {
           <Emoji rating={game.rating_top} />
         </Heading>
       </CardBody>
+      </Link>
     </Card>
   );
 };
